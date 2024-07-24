@@ -44,6 +44,13 @@ async def calculate_sum(item: Item):
     print(pvout)
     prediction = pvout
     prediction_list = prediction.tolist()  # Assuming prediction is a numpy array
+    prediction_list.append(df['dif'][0])
+    prediction_list.append(df['ghi'][0])
+    prediction_list.append(df['gti'][0])
+    prediction_list.append(df['dni'][0])
+    prediction_list.append(df['temp'][0])
+    prediction_list.append(df['opta'][0])
+    
     return {"prediction": prediction_list}
     # prediction = model.predict(df)
     # return {"prediction": prediction}
